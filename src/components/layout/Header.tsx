@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
@@ -46,23 +47,15 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="relative">
-                <span
-                  className={`text-2xl font-bold tracking-tight transition-colors duration-300 ${
-                    isScrolled || isMobileMenuOpen ? 'text-navy-900' : 'text-white'
-                  }`}
-                >
-                  Nest<span className="text-gold-500">Raw</span>
-                </span>
-                <span
-                  className={`block text-xs tracking-widest uppercase transition-colors duration-300 ${
-                    isScrolled || isMobileMenuOpen ? 'text-gray-600' : 'text-gray-200'
-                  }`}
-                >
-                  Merchants
-                </span>
-              </div>
+            <Link href="/" className="flex items-center group">
+              <Image
+                src="/nestraw_logo_main.JPG"
+                alt="NestRaw Merchants Logo"
+                width={160}
+                height={50}
+                className="h-12 w-auto object-contain rounded-xl group-hover:brightness-90 transition-all duration-300"
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation */}
