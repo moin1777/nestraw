@@ -12,6 +12,7 @@ import {
   Warehouse,
   Globe,
   CheckCircle,
+  X,
 } from 'lucide-react';
 import { SectionHeading, Card, Button } from '@/components/ui';
 import dynamic from 'next/dynamic';
@@ -92,12 +93,27 @@ export default function ContactPage() {
 
   const onSubmit = async (data: ContactFormData) => {
     setFormStatus('loading');
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log('Form data:', data);
-    setFormStatus('success');
-    reset();
-    setTimeout(() => setFormStatus('idle'), 5000);
+    try {
+      const response = await fetch(process.env.NEXT_PUBLIC_FORMSPREE_URL || '', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setFormStatus('success');
+      reset();
+      setTimeout(() => setFormStatus('idle'), 5000);
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setFormStatus('error');
+      setTimeout(() => setFormStatus('idle'), 5000);
+    }
   };
 
   return (
@@ -351,6 +367,18 @@ export default function ContactPage() {
                     </h3>
                     <p className="text-gray-600">
                       Thank you for reaching out. We&apos;ll get back to you soon.
+                    </p>
+                  </div>
+                ) : formStatus === 'error' ? (
+                  <div className="text-center py-8">
+                    <div className="w-16 h-16 rounded-full bg-red-100 text-red-600 flex items-center justify-center mx-auto mb-4">
+                      <X size={32} />
+                    </div>
+                    <h3 className="text-xl font-bold text-navy-900 mb-2">
+                      Failed to Send
+                    </h3>
+                    <p className="text-gray-600">
+                      Something went wrong. Please try again or contact us directly.
                     </p>
                   </div>
                 ) : (
