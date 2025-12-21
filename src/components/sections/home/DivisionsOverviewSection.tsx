@@ -3,6 +3,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Leaf, Sparkles, FlaskConical, ArrowRight } from 'lucide-react';
 import { SectionHeading } from '@/components/ui';
 
@@ -13,7 +14,7 @@ const divisions = [
     description:
       'Premium agricultural products including Makhana (Fox Nuts), dehydrated vegetables, and select pulses exported to markets worldwide.',
     href: '/divisions#agricultural',
-    image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&auto=format&fit=crop',
+    image: '/agricultural_card.png',
     color: 'from-green-600 to-green-800',
   },
   {
@@ -22,7 +23,7 @@ const divisions = [
     description:
       'Quality hygiene products including wet wipes, tissues, and personal care items meeting international health standards.',
     href: '/divisions#toiletries',
-    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&auto=format&fit=crop',
+    image: '/toiletries_card.png',
     color: 'from-blue-600 to-blue-800',
   },
   {
@@ -31,7 +32,7 @@ const divisions = [
     description:
       'Reliable supply of metal oxides, metallic stearates, and specialty chemicals for manufacturing industries.',
     href: '/divisions#chemicals',
-    image: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&auto=format&fit=crop',
+    image: '/chemicals_card.png',
     color: 'from-purple-600 to-purple-800',
   },
 ];
@@ -68,15 +69,15 @@ export default function DivisionsOverviewSection() {
                   <div className="relative h-full bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500">
                     {/* Image Section */}
                     <div className="relative h-48 overflow-hidden">
-                      <div
-                        className={`absolute inset-0 bg-gradient-to-br ${division.color} opacity-90`}
+                      <Image
+                        src={division.image}
+                        alt={division.title}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Icon
-                          size={64}
-                          className="text-white/80 group-hover:scale-110 transition-transform duration-500"
-                        />
-                      </div>
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-br opacity-40 group-hover:opacity-30 transition-opacity duration-500`}
+                      />
                     </div>
 
                     {/* Content Section */}

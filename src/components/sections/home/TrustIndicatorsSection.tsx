@@ -7,25 +7,25 @@ import { Globe, Package, Award, Users } from 'lucide-react';
 const stats = [
   {
     icon: Award,
-    value: 10,
+    value: 3,
     suffix: '+',
     label: 'Years of Excellence',
   },
   {
     icon: Globe,
-    value: 15,
+    value: 5,
     suffix: '+',
     label: 'Countries Served',
   },
   {
     icon: Package,
-    value: 50,
+    value: 16,
     suffix: '+',
     label: 'Product Categories',
   },
   {
     icon: Users,
-    value: 100,
+    value: 50,
     suffix: '+',
     label: 'Happy Clients',
   },

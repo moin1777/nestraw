@@ -43,7 +43,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/nestraw-merchants-pvt-ltd/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-white/10 rounded-lg hover:bg-gold-500 hover:text-navy-900 transition-colors"
@@ -51,7 +51,7 @@ export default function Footer() {
               >
                 <Linkedin size={20} />
               </a>
-              <a
+              {/* <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -59,7 +59,7 @@ export default function Footer() {
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
-              </a>
+              </a> */}
               <a
                 href="mailto:Info@NestRawMerchants.com"
                 className="p-2 bg-white/10 rounded-lg hover:bg-gold-500 hover:text-navy-900 transition-colors"

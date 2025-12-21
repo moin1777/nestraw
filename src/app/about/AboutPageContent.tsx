@@ -2,6 +2,7 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import Image from 'next/image';
 import { Target, Eye, Award, Users, Lightbulb, Heart, CheckCircle } from 'lucide-react';
 import { SectionHeading, Card } from '@/components/ui';
 
@@ -133,21 +134,14 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-navy-100 to-gray-100 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="text-5xl md:text-6xl font-bold text-navy-900 mb-2">
-                      Nest<span className="text-gold-500">Raw</span>
-                    </div>
-                    <p className="text-lg text-gray-600 tracking-widest uppercase">
-                      Merchants Pvt Ltd
-                    </p>
-                    <div className="mt-6 h-1 w-24 bg-gold-500 mx-auto rounded-full" />
-                    <p className="mt-6 text-gray-500 text-sm">
-                      Global Trade, Local Trust
-                    </p>
-                  </div>
-                </div>
+              <div className="aspect-4/3 rounded-2xl bg-linear-to-br overflow-hidden flex items-center justify-center p-8">
+                <Image
+                  src="/nestraw_logo_final_removebg2.png"
+                  alt="NestRaw Merchants Logo"
+                  width={600}
+                  height={450}
+                  className="object-contain max-h-full"
+                />
               </div>
             </motion.div>
           </motion.div>
@@ -297,14 +291,14 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0 }}
             animate={isCertInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-center text-gray-500 text-sm mt-8"
           >
             * Certification logos to be added
-          </motion.p>
+          </motion.p> */}
         </div>
       </section>
     </>
