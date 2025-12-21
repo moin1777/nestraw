@@ -132,15 +132,14 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: 30 }}
               animate={isCompanyInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
+              className="relative h-full"
             >
-              <div className="aspect-4/3 rounded-2xl bg-linear-to-br overflow-hidden flex items-center justify-center p-8">
+              <div className="rounded-2xl overflow-hidden relative h-full min-h-[400px]">
                 <Image
                   src="/nestraw_logo_final_removebg2.png"
                   alt="NestRaw Merchants Logo"
-                  width={600}
-                  height={450}
-                  className="object-contain max-h-full"
+                  fill
+                  className="object-cover"
                 />
               </div>
             </motion.div>
