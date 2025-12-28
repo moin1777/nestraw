@@ -95,7 +95,7 @@ export default function WhyChooseUsSection() {
                     transition={{ duration: 0.6, delay: 0.4 }}
                     className="text-6xl md:text-7xl font-bold text-gold-500 mb-4"
                   >
-                    10+
+                    3+
                   </motion.div>
                   <p className="text-xl text-gray-300 mb-2">Years of Excellence</p>
                   <p className="text-sm text-gray-400 max-w-xs mx-auto">

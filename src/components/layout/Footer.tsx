@@ -152,7 +152,7 @@ export default function Footer() {
               © {new Date().getFullYear()} NestRaw Merchants Pvt Ltd. All rights
               reserved.
             </p>
-            <p className="text-gray-500 text-sm">Designed with excellence</p>
+            <p className="text-gray-500 text-sm">Designed & Developed by <Link href="https://x.com/moinmalek1777" className="text-gold-500 hover:underline" target='_blank'>Moin Malek</Link></p>
           </div>
         </div>
       </div>
