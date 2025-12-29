@@ -27,6 +27,11 @@ export const metadata: Metadata = {
     "international trade",
   ],
   authors: [{ name: "NestRaw Merchants Pvt Ltd" }],
+  icons: {
+    icon: "/nestraw_logo_final.svg",
+    shortcut: "/nestraw_logo_final.svg",
+    apple: "/nestraw_logo_final.svg",
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
